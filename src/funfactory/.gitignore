@@ -1,0 +1,6 @@
+*.py[co]
+*.sw[po]
+.DS_Store
+.nose*
+.playdoh
+.tox
