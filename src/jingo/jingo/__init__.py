@@ -12,6 +12,7 @@ from django.utils.importlib import import_module
 from django.utils.translation import trans_real
 
 import jinja2
+import re
 
 VERSION = (0, 3)
 __version__ = '.'.join(map(str, VERSION))
@@ -172,7 +173,7 @@ class Loader(BaseLoader):
     def load_template(self, template_name, template_dirs=None):
         if hasattr(template_name, 'rsplit'):
             app = template_name.rsplit('/')[0]
-            if app in getattr(settings, 'JINGO_EXCLUDE_APPS', []):
+            if app in getattr(settings, 'JINGO_EXCLUDE_APPS', []) or re.search('\.htm[l]$', app):
                 raise TemplateDoesNotExist(template_name)
 
         template = env.get_template(template_name)

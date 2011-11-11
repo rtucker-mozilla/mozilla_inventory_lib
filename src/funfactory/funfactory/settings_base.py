@@ -218,10 +218,10 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     # Third-party apps, patches, fixes
-    'commonware.response.cookies',
+    #'commonware.response.cookies',
     'djcelery',
     'django_nose',
-    'session_csrf',
+    #'session_csrf',
 
     # L10n
     'product_details',
