@@ -150,7 +150,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-    'session_csrf.context_processor',
+    #'session_csrf.context_processor',
     'django.contrib.messages.context_processors.messages',
     'funfactory.context_processors.i18n',
     'funfactory.context_processors.globals',
