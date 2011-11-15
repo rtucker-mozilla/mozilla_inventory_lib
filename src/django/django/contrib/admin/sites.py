@@ -82,7 +82,8 @@ class AdminSite(object):
                       'cannot be registered with admin.' % model.__name__)
 
             if model in self._registry:
-                raise AlreadyRegistered('The model %s is already registered' % model.__name__)
+                pass
+                #raise AlreadyRegistered('The model %s is already registered' % model.__name__)
 
             # If we got **options then dynamically construct a subclass of
             # admin_class with those **options.
@@ -109,8 +110,12 @@ class AdminSite(object):
             model_or_iterable = [model_or_iterable]
         for model in model_or_iterable:
             if model not in self._registry:
-                raise NotRegistered('The model %s is not registered' % model.__name__)
-            del self._registry[model]
+                pass
+                #raise NotRegistered('The model %s is not registered' % model.__name__)
+            try:
+                del self._registry[model]
+            except:
+                pass
 
     def add_action(self, action, name=None):
         """

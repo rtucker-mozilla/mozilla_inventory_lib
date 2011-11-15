@@ -187,12 +187,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'session_csrf.CsrfMiddleware',  # Must be after auth middleware.
+    #'session_csrf.CsrfMiddleware',  # Must be after auth middleware.
     'django.contrib.messages.middleware.MessageMiddleware',
     'commonware.middleware.FrameOptionsHeader',
     'mobility.middleware.DetectMobileMiddleware',
     'mobility.middleware.XMobileMiddleware',
+    'django.contrib.auth.middleware.RemoteUserMiddleware',
+    'middleware.restrict_to_remote.RestrictToRemoteMiddleware',
 )
+
 
 ROOT_URLCONF = '%s.urls' % ROOT_PACKAGE
 
