@@ -174,6 +174,7 @@ class Loader(BaseLoader):
         if hasattr(template_name, 'rsplit'):
             app = template_name.rsplit('/')[0]
             if app in getattr(settings, 'JINGO_EXCLUDE_APPS', []) or re.search('\.htm[l]$', app):
+                print "The following app is not set in JINGO_EXCLUDE_APPS %s" % (app)
                 raise TemplateDoesNotExist(template_name)
 
         template = env.get_template(template_name)
